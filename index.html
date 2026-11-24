@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бүтэн-Оргил ХХК</title>
+<meta name="description" content="Бүтэн-Оргил ХХК (Buten-Orgil LLC) — Хөвсгөл аймгийн Мөрөн сумын хүнс, барааны бөөний болон жижиглэн худалдааны компани. Оргил бөөний төв, Bto300 захиалгын апп.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: steady, local, trustworthy — a regional wholesaler that keeps 21 sums stocked
+   IDEA: a delivery route map — Mörön hub, roads out to the sums
+   PICTURE: layered Khövsgöl scene: mountains, larches, the wholesale centre, a truck heading out on the road
+   COLOUR and TYPE: Khövsgöl lake blue field, white, warm delivery orange accent; Manrope + Inter (Cyrillic)
+   LAYOUT: blue hero band with scene, figures row, services, app, contact, English company info, privacy, footer */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0d1620);--ink:light-dark(#0f1d2b,#e9f0f6);--muted:light-dark(#4b5b6b,#a9b8c6);
+--lake:#1c5aa6;--lake2:#164a8a;--deep:#0e2f57;--sun:#f28c28;--line:light-dark(#dde5ee,#223244);--card:light-dark(#f3f7fb,#132232)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Manrope,Inter,sans-serif;line-height:1.1;margin:0;text-wrap:balance}
+h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;margin-bottom:14px}
+h3{font-size:19px;font-weight:700;margin-bottom:6px}
+p{margin:0 0 12px}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(40px,6vw,84px) max(5vw,18px)}
+.lead{font-size:17px;color:var(--muted);max-width:62ch}
+/* nav */
+header{position:sticky;top:0;z-index:5;background:var(--deep);color:#fff}
+.nav{display:flex;align-items:center;gap:20px;padding:12px max(5vw,18px);max-width:1280px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font:800 18px Manrope,sans-serif;text-decoration:none}
+.brand svg{width:34px;height:34px}
+.nav nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.nav nav a{text-decoration:none;padding:10px 12px;border-radius:8px;font-size:15px;opacity:.9}
+.nav nav a:hover,.nav nav a:focus-visible{background:rgba(255,255,255,.12);opacity:1;outline:none}
+/* hero */
+.hero{background:var(--lake);color:#fff;padding:clamp(32px,5vw,72px) max(5vw,18px) 0}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:end}
+.hero h1{font-size:clamp(34px,5vw,52px);font-weight:800;margin-bottom:16px}
+.hero p{font-size:17px;color:#dbe8f7;max-width:52ch}
+.hero .txt{padding-bottom:clamp(32px,5vw,64px)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:10px;font-weight:600;text-decoration:none;font-size:15px}
+.btn.primary{background:var(--sun);color:#1b1208}
+.btn.ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.scene{display:block;width:100%;height:auto}
+.truck{animation:drive 9s linear infinite}
+@keyframes drive{0%{transform:translateX(-140px)}100%{transform:translateX(720px)}}
+@media(prefers-reduced-motion:reduce){.truck{animation:none;transform:translateX(330px)}html{scroll-behavior:auto}}
+/* figures */
+.figs{background:var(--deep);color:#fff;padding:26px max(5vw,18px)}
+.figs .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.fig b{display:block;font:800 clamp(28px,3.6vw,40px)/1 Manrope,sans-serif;color:var(--sun)}
+.fig span{font-size:14px;color:#c4d4e6}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}
+.card{background:var(--card);border-radius:14px;padding:22px;border:1px solid var(--line)}
+.card svg{width:40px;height:40px;margin-bottom:12px}
+.card p{color:var(--muted);margin:0;font-size:15px}
+/* app */
+.app{background:var(--card)}
+.app .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:clamp(24px,4vw,56px);align-items:center}
+.feat{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.feat li{display:flex;gap:10px;align-items:flex-start}
+.feat li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--sun);margin-top:8px}
+.store{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.store a{background:var(--ink);color:var(--bg);text-decoration:none;border-radius:10px;padding:10px 18px;min-height:46px;display:flex;flex-direction:column;justify-content:center;line-height:1.2}
+.store small{font-size:11px;opacity:.75}.store strong{font-size:16px}
+.phone{max-width:280px;margin:0 auto;width:100%}
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+dl{margin:0;display:grid;grid-template-columns:9em minmax(0,1fr);gap:12px 16px}
+dt{color:var(--muted);font-size:14px;padding-top:2px}
+dd{margin:0;font-weight:500;overflow-wrap:anywhere}
+.nowrap{white-space:nowrap}
+.map{background:var(--lake);border-radius:16px;color:#fff;padding:24px;display:flex;flex-direction:column;gap:14px}
+.map svg{width:100%;height:auto}
+.map a{color:#fff}
+/* english + privacy */
+.en{border-top:1px solid var(--line)}
+.en table{width:100%;border-collapse:collapse;margin-top:18px;font-size:15px}
+.en th,.en td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.en th{width:30%;color:var(--muted);font-weight:500}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 20px;margin-top:14px}
+summary{cursor:pointer;font:700 17px Manrope,sans-serif;padding:16px 0;min-height:44px}
+details[open] summary{border-bottom:1px solid var(--line);margin-bottom:14px}
+details h3{font-size:16px;margin-top:14px}
+details p,details li{font-size:15px;color:var(--muted)}
+footer{background:var(--deep);color:#c4d4e6;padding:28px max(5vw,18px);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:820px){.hero .wrap,.app .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}.hero .txt{padding-bottom:8px}.figs .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.nav nav{margin-left:0;width:100%}.nav nav a{padding:8px 10px;font-size:14px}dl{grid-template-columns:minmax(0,1fr);gap:2px}dd{margin-bottom:10px}.en th{width:40%}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="Бүтэн-Оргил ХХК нүүр">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#f28c28"/><path d="M6 30 L16 14 L21 21 L25 16 L34 30 Z" fill="#0e2f57"/><path d="M16 14 L19 19 L13 19 Z" fill="#fff"/></svg>
+      Бүтэн-Оргил
+    </a>
+    <nav aria-label="Үндсэн цэс">
+      <a href="#about">Бидний тухай</a>
+      <a href="#services">Үйлчилгээ</a>
+      <a href="#app">Bto300 апп</a>
+      <a href="#contact">Холбоо барих</a>
+      <a href="#english">English</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="txt">
+      <h1>Хөвсгөлийн дэлгүүрүүдийн найдвартай бөөний түнш</h1>
+      <p>Бүтэн-Оргил ХХК нь Хөвсгөл аймгийн Мөрөн суманд хүнс, барааны бөөний болон жижиглэн худалдаа эрхэлдэг компани юм. Аймгийн 21 сумын 200 гаруй дэлгүүрийг бараа бүтээгдэхүүнээр хангадаг.</p>
+      <div class="btns">
+        <a class="btn primary" href="#app">Bto300-аар захиалах</a>
+        <a class="btn ghost" href="#contact">Холбоо барих</a>
+      </div>
+    </div>
+    <svg class="scene" viewBox="0 0 640 400" role="img" aria-label="Мөрөн дэх Оргил бөөний төв, сумд руу бараа хүргэж буй ачааны машин">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b6dbd"/><stop offset="1" stop-color="#5d97d6"/></linearGradient>
+        <linearGradient id="mt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9d2ec"/><stop offset="1" stop-color="#6f9ccc"/></linearGradient>
+        <linearGradient id="wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f4f7fb"/><stop offset="1" stop-color="#d6e0ec"/></linearGradient>
+        <g id="larch"><path d="M0 0 L-11 34 L11 34 Z" fill="#1f4d3a"/><path d="M0 14 L-14 50 L14 50 Z" fill="#245a43"/><rect x="-2" y="50" width="4" height="10" fill="#3b2a1d"/></g>
+      </defs>
+      <rect width="640" height="400" fill="url(#sky)"/>
+      <circle cx="540" cy="70" r="30" fill="#ffd9a8" opacity=".9"/>
+      <path d="M0 230 L90 140 L150 190 L230 110 L320 200 L400 130 L480 190 L560 120 L640 180 L640 300 L0 300 Z" fill="url(#mt)"/>
+      <path d="M230 110 L252 132 L238 130 L226 140 L214 128 Z M400 130 L418 148 L405 146 L394 153 L385 144 Z" fill="#fff" opacity=".85"/>
+      <path d="M0 260 Q160 230 320 252 T640 246 L640 400 L0 400 Z" fill="#2f6b4f"/>
+      <use href="#larch" x="40" y="214"/><use href="#larch" x="74" y="224"/><use href="#larch" x="590" y="206"/><use href="#larch" x="616" y="220"/><use href="#larch" x="560" y="226"/>
+      <!-- building -->
+      <ellipse cx="300" cy="318" rx="190" ry="14" fill="#0e2f57" opacity=".25"/>
+      <rect x="140" y="214" width="320" height="104" fill="url(#wall)"/>
+      <path d="M128 216 L300 168 L472 216 Z" fill="#0e2f57"/>
+      <path d="M300 168 L472 216 L460 216 L300 174 Z" fill="#fff" opacity=".18"/>
+      <rect x="170" y="186" width="260" height="34" rx="6" fill="#f28c28"/>
+      <text x="300" y="209" text-anchor="middle" font-family="Manrope,Inter,sans-serif" font-weight="800" font-size="17" fill="#1b1208">ОРГИЛ БӨӨНИЙ ТӨВ</text>
+      <rect x="168" y="240" width="58" height="44" rx="3" fill="#9fc3e8"/><rect x="374" y="240" width="58" height="44" rx="3" fill="#9fc3e8"/>
+      <rect x="168" y="240" width="58" height="10" fill="#fff" opacity=".35"/><rect x="374" y="240" width="58" height="10" fill="#fff" opacity=".35"/>
+      <rect x="252" y="236" width="96" height="82" fill="#1c5aa6"/>
+      <path d="M252 236 h96 v8 h-96z M252 256 h96 v4 h-96z M252 274 h96 v4 h-96z M252 292 h96 v4 h-96z" fill="#164a8a"/>
+      <!-- road -->
+      <path d="M0 352 Q320 326 640 352 L640 372 Q320 346 0 372 Z" fill="#2a3440"/>
+      <path d="M20 360 Q320 334 620 360" stroke="#f5d37a" stroke-width="2" stroke-dasharray="14 12" fill="none"/>
+      <!-- truck -->
+      <g class="truck">
+        <g transform="translate(0,312)">
+          <rect x="0" y="6" width="78" height="38" rx="3" fill="#ffffff"/>
+          <rect x="0" y="6" width="78" height="8" fill="#f28c28"/>
+          <text x="39" y="34" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="11" fill="#0e2f57">Bto300</text>
+          <path d="M80 18 h20 l12 14 v12 h-32 z" fill="#f28c28"/>
+          <path d="M84 21 h14 l8 10 h-22 z" fill="#cfe3f7"/>
+          <circle cx="20" cy="46" r="7" fill="#1a1f26"/><circle cx="96" cy="46" r="7" fill="#1a1f26"/>
+          <circle cx="20" cy="46" r="2.5" fill="#9aa6b2"/><circle cx="96" cy="46" r="2.5" fill="#9aa6b2"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="figs" aria-label="Тоон үзүүлэлт">
+  <div class="wrap">
+    <div class="fig"><b>2005</b><span>онд үүсгэн байгуулагдсан</span></div>
+    <div class="fig"><b>21</b><span>сумд бараа нийлүүлдэг</span></div>
+    <div class="fig"><b>200+</b><span>хамтрагч дэлгүүр</span></div>
+    <div class="fig"><b>50+</b><span>ажлын байр</span></div>
+  </div>
+</section>
+
+<section class="band" id="about">
+  <div class="wrap">
+    <h2>Бидний тухай</h2>
+    <p class="lead">Бүтэн-Оргил ХХК нь хүнсний болон өргөн хэрэглээний барааны бөөний худалдааны чиглэлээр Хөвсгөл аймагт олон жил тогтвортой үйл ажиллагаа явуулж байна. Мөрөн сум дахь Оргил бөөний төвөөрөө дамжуулан иргэд, жижиглэн худалдаа эрхлэгчид болон сумдын дэлгүүрүүдэд үйлчилдэг.</p>
+    <p class="lead">Компани маань аймгийн тэргүүний үйлдвэрлэл, үйлчилгээ эрхлэгчээр шалгарч байсан бөгөөд орон нутагтаа 50 гаруй ажлын байр бий болгосон.</p>
+  </div>
+</section>
+
+<section class="band" id="services" style="padding-top:0">
+  <div class="wrap">
+    <h2>Үйлчилгээ</h2>
+    <div class="grid">
+      <div class="card">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="14" width="32" height="22" rx="3" fill="#1c5aa6"/><path d="M2 16 L20 4 L38 16 Z" fill="#0e2f57"/><rect x="15" y="22" width="10" height="14" fill="#f28c28"/></svg>
+        <h3>Бөөний худалдаа</h3>
+        <p>Оргил бөөний төвд хүнсний болон өргөн хэрэглээний барааг бөөний үнээр нийлүүлнэ.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 12 h24 l-3 20 h-18 z" fill="#1c5aa6"/><path d="M14 12 a6 6 0 0 1 12 0" stroke="#f28c28" stroke-width="3" fill="none"/></svg>
+        <h3>Жижиглэн худалдаа</h3>
+        <p>Иргэд, өрхүүдэд зориулсан жижиглэн худалдаа. Карт болон NFC төлбөр хүлээн авна.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="12" width="22" height="16" rx="2" fill="#1c5aa6"/><path d="M25 16 h7 l5 6 v6 h-12 z" fill="#f28c28"/><circle cx="11" cy="31" r="4" fill="#0e2f57"/><circle cx="31" cy="31" r="4" fill="#0e2f57"/></svg>
+        <h3>Сумдын нийлүүлэлт</h3>
+        <p>Хөвсгөл аймгийн 21 сумын 200 гаруй дэлгүүртэй хамтран ажиллаж, бараа нийлүүлдэг.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="11" y="3" width="18" height="34" rx="4" fill="#0e2f57"/><rect x="14" y="8" width="12" height="22" rx="1" fill="#9fc3e8"/><circle cx="20" cy="33" r="1.6" fill="#f28c28"/></svg>
+        <h3>Онлайн захиалга</h3>
+        <p>Дэлгүүр эрхлэгчид Bto300 аппаар бүтээгдэхүүнээ захиалж, захиалгын явцаа хянана.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band app" id="app">
+  <div class="wrap">
+    <div>
+      <h2>Bto300 — дэлгүүр эрхлэгчдэд зориулсан захиалгын апп</h2>
+      <p class="lead">Bto300 аппаар Бүтэн-Оргил ХХК-аас бүтээгдэхүүнийг хаанаас ч захиална.</p>
+      <ul class="feat">
+        <li>Ангилалд хуваасан бүтээгдэхүүний каталог, түлхүүр үг, үнэ, ангиллаар хайх</li>
+        <li>Сагсанд нэмж, хялбар захиалах</li>
+        <li>Захиалгын явцыг бодит хугацаанд хянах, мэдэгдэл авах</li>
+        <li>Захиалгын түүх харах, өмнөх захиалгаа давтан хийх</li>
+        <li>Бүтээгдэхүүний үнэ, үлдэгдэл, хямдралын мэдээлэл</li>
+      </ul>
+      <div class="store">
+        <a href="https://play.google.com/store/apps/details?id=com.butenorgil"><small>Татах</small><strong>Google Play</strong></a>
+        <a href="https://apps.apple.com/app/bto300/id6449706440"><small>Татах</small><strong>App Store</strong></a>
+      </div>
+    </div>
+    <svg class="phone" viewBox="0 0 240 440" role="img" aria-label="Bto300 аппын жишээ дэлгэц">
+      <rect x="6" y="6" width="228" height="428" rx="34" fill="#0e2f57"/>
+      <rect x="18" y="20" width="204" height="400" rx="24" fill="#f3f7fb"/>
+      <rect x="18" y="20" width="204" height="70" rx="24" fill="#1c5aa6"/><rect x="18" y="66" width="204" height="24" fill="#1c5aa6"/>
+      <text x="36" y="58" font-family="Manrope,sans-serif" font-weight="800" font-size="20" fill="#fff">Bto300</text>
+      <rect x="32" y="102" width="176" height="30" rx="15" fill="#fff" stroke="#d6e0ec"/>
+      <text x="48" y="122" font-family="Inter,sans-serif" font-size="12" fill="#6b7a89">Бүтээгдэхүүн хайх</text>
+      <g font-family="Inter,sans-serif" font-size="11" fill="#0f1d2b">
+        <rect x="32" y="146" width="84" height="104" rx="12" fill="#fff" stroke="#d6e0ec"/><rect x="44" y="158" width="60" height="48" rx="8" fill="#ffe2c4"/><text x="44" y="224">Гурил 25кг</text><rect x="44" y="232" width="40" height="8" rx="4" fill="#f28c28"/>
+        <rect x="124" y="146" width="84" height="104" rx="12" fill="#fff" stroke="#d6e0ec"/><rect x="136" y="158" width="60" height="48" rx="8" fill="#cfe3f7"/><text x="136" y="224">Тос 5л</text><rect x="136" y="232" width="40" height="8" rx="4" fill="#f28c28"/>
+        <rect x="32" y="258" width="84" height="104" rx="12" fill="#fff" stroke="#d6e0ec"/><rect x="44" y="270" width="60" height="48" rx="8" fill="#d7ecdf"/><text x="44" y="336">Будаа 10кг</text><rect x="44" y="344" width="40" height="8" rx="4" fill="#f28c28"/>
+        <rect x="124" y="258" width="84" height="104" rx="12" fill="#fff" stroke="#d6e0ec"/><rect x="136" y="270" width="60" height="48" rx="8" fill="#f2e1f5"/><text x="136" y="336">Элсэн чихэр</text><rect x="136" y="344" width="40" height="8" rx="4" fill="#f28c28"/>
+      </g>
+      <rect x="32" y="374" width="176" height="34" rx="17" fill="#f28c28"/>
+      <text x="120" y="396" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="700" font-size="13" fill="#1b1208">Захиалга илгээх</text>
+    </svg>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Холбоо барих</h2>
+      <dl>
+        <dt>Компани</dt><dd>Бүтэн-Оргил ХХК</dd>
+        <dt>Хаяг</dt><dd>Хөвсгөл аймаг, Мөрөн сум, 5-р баг, Цагаан-Уул зах</dd>
+        <dt>Байршил код</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=J5PH%2BF9X%20M%C3%B6r%C3%B6n">J5PH+F9X, Мөрөн</a></dd>
+        <dt>Албан утас</dt><dd class="nowrap"><a href="tel:+97695947850">+976 9594 7850</a></dd>
+        <dt>Оргил бөөний төв</dt><dd class="nowrap"><a href="tel:+97670382234">+976 7038 2234</a></dd>
+        <dt>Имэйл</dt><dd><a href="mailto:admin@bto.mn">admin@bto.mn</a></dd>
+        <dt>Төлбөр</dt><dd>Бэлэн, карт, NFC</dd>
+      </dl>
+    </div>
+    <div class="map">
+      <h3>Хөвсгөл аймаг даяар хүргэнэ</h3>
+      <svg viewBox="0 0 400 230" role="img" aria-label="Мөрөнгөөс 21 сум руу чиглэсэн нийлүүлэлтийн сүлжээ">
+        <g id="net" stroke="#9fc3e8" stroke-width="1.2" fill="#fff"></g>
+        <circle cx="200" cy="125" r="12" fill="#f28c28"/>
+        <circle cx="200" cy="125" r="5" fill="#0e2f57"/>
+        <text x="200" y="157" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="14" fill="#fff">Мөрөн</text>
+      </svg>
+      <p style="margin:0;color:#dbe8f7;font-size:15px">Мөрөн дэх төвөөс аймгийн 21 сумын 200 гаруй дэлгүүрт бараа нийлүүлдэг.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band en" id="english" lang="en">
+  <div class="wrap">
+    <h2>Company information</h2>
+    <p class="lead">Buten-Orgil LLC is a food and consumer goods wholesale and retail company based in Mörön, Khövsgöl Province, Mongolia. Through the Orgil Wholesale Center and the Bto300 ordering app, the company supplies more than 200 shops across 21 districts (sums) of the province.</p>
+    <table>
+      <tr><th>Legal name</th><td>Buten-Orgil LLC (Бүтэн-Оргил ХХК)</td></tr>
+      <tr><th>Business</th><td>Wholesale and retail trade of food and consumer goods</td></tr>
+      <tr><th>Address</th><td>5th bag, Tsagaan-Uul market, Mörön, Khövsgöl Province, Mongolia</td></tr>
+      <tr><th>Phone</th><td class="nowrap">+976 9594 7850</td></tr>
+      <tr><th>Email</th><td>admin@bto.mn</td></tr>
+      <tr><th>Website</th><td>https://bto.mn</td></tr>
+      <tr><th>Mobile app</th><td>Bto300 (Google Play, App Store)</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="band" id="privacy" style="padding-top:0">
+  <div class="wrap">
+    <h2>Нууцлалын бодлого / Privacy Policy</h2>
+    <details>
+      <summary>Нууцлалын бодлого (Монгол)</summary>
+      <p>Энэхүү бодлого нь Бүтэн-Оргил ХХК-ийн вэбсайт болон Bto300 аппыг ашиглах үед хэрэглэгчийн мэдээллийг хэрхэн цуглуулж, ашигладгийг тайлбарлана.</p>
+      <h3>Цуглуулах мэдээлэл</h3>
+      <p>Нэр, утасны дугаар, имэйл, дэлгүүрийн нэр, хаяг болон захиалгын түүх. Эдгээрийг захиалга бүртгэх, хүргэх, хэрэглэгчтэй холбогдох зорилгоор ашиглана.</p>
+      <h3>Мэдээллийг хуваалцах</h3>
+      <p>Бид хэрэглэгчийн мэдээллийг гуравдагч этгээдэд худалдахгүй. Зөвхөн захиалга биелүүлэх, төлбөр хийх үйлчилгээ үзүүлэгчид болон хуулиар шаардсан тохиолдолд хуваалцана.</p>
+      <h3>Хадгалалт ба устгал</h3>
+      <p>Мэдээллийг үйлчилгээ үзүүлэх хугацаанд хадгална. Бүртгэлээ болон хувийн мэдээллээ устгуулах хүсэлтээ admin@bto.mn хаягаар илгээнэ үү.</p>
+      <h3>Холбоо барих</h3>
+      <p>Асуулт байвал: admin@bto.mn, +976 9594 7850.</p>
+    </details>
+    <details lang="en">
+      <summary>Privacy Policy (English)</summary>
+      <p>This policy explains how Buten-Orgil LLC collects and uses information when you use our website and the Bto300 app.</p>
+      <h3>Information we collect</h3>
+      <p>Name, phone number, email, shop name and address, and order history. We use this information to process and deliver orders and to contact you.</p>
+      <h3>Sharing</h3>
+      <p>We do not sell personal information. We share it only with service providers needed to fulfil orders and payments, or when required by law.</p>
+      <h3>Retention and deletion</h3>
+      <p>We keep information while we provide our services. To request deletion of your account and personal data, email admin@bto.mn.</p>
+      <h3>Contact</h3>
+      <p>admin@bto.mn · +976 9594 7850</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Бүтэн-Оргил ХХК · Buten-Orgil LLC</span>
+    <span>Мөрөн, Хөвсгөл, Монгол Улс · admin@bto.mn</span>
+  </div>
+</footer>
+
+<script>
+{
+  const net = document.getElementById('net');
+  const cx = 200, cy = 125, pts = [];
+  for (let i = 0; i < 21; i++) {
+    const a = (i / 21) * Math.PI * 2 + 0.2;
+    const r = 70 + (i % 3) * 14;
+    pts.push([cx + Math.cos(a) * r * 1.6, cy + Math.sin(a) * r * 0.95]);
+  }
+  net.innerHTML = pts.map(([x, y]) =>
+    `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4.5"/>`
+  ).join('');
+  const yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+}
+</script>
+</body>
+</html>
